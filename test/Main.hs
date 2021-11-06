@@ -2,13 +2,8 @@
 
 module Main where
 
-import Hedgehog
 import Hedgehog.Main
-import HMC
-
-prop_test :: Property
-prop_test = property $ do
-  doHMC === "HMC"
+import Test.HMC.Integrator
 
 main :: IO ()
-main = defaultMain [checkParallel $$(discover)]
+main = defaultMain [Test.HMC.Integrator.tests]

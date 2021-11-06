@@ -25,14 +25,16 @@ library
   build-depends:   linear
 
 test-suite hmc-sampler-tests
-  type:           exitcode-stdio-1.0
   import:         common
+  type:           exitcode-stdio-1.0
   hs-source-dirs: test
   main-is:        Main.hs
   ghc-options:    -Wall -threaded
+  other-modules:  Test.HMC.Integrator
   build-depends:
     , hedgehog
     , hmc-sampler
+    , linear
 
 executable viz
   import:         common
